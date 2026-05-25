@@ -29,9 +29,9 @@ allowed-tools: Bash(git *) Bash(npm *)
    - **Risks:** <list any concerns, or "None detected">
    ---
 
-2. Below the summary, show the full diff of the changes (staged and unstaged) so the user can review exactly what will be pushed.
+2. Below the summary, explain the changes in plain language — what was added, removed, or modified and why it matters. Do NOT show the raw diff.
 
-3. After showing the summary and diff, ask:
+3. After the explanation, ask:
    **"Do you want to proceed with the push? (yes / no)"**
    Wait for their answer before doing anything else.
 

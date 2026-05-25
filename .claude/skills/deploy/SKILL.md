@@ -11,16 +11,27 @@ allowed-tools: Bash(git *) Bash(npm *)
 - **Commits ahead of remote:** !`git log @{u}.. --oneline 2>/dev/null || echo "(no upstream set)"`
 - **Staged diff:** !`git diff --cached --stat`
 - **Unstaged diff:** !`git diff --stat`
+- **Full staged diff:** !`git diff --cached`
+- **Full unstaged diff:** !`git diff`
 
 ## Instructions
 
-1. Read the current state above and build a clear summary for the user:
-   - Which branch they are on
-   - What files changed (staged and unstaged)
-   - How many commits will be pushed
-   - Any risks you notice (e.g. untracked env files, broken build config)
+1. Read the current state above and present the user a clear summary in this format:
 
-2. Present the summary to the user and ask:
+   ---
+   **Deploy Summary**
+   - **Branch:** <branch>
+   - **Files changed:**
+     - `file1` — added / modified / deleted
+     - `file2` — ...
+   - **Commits to push:** <N commit(s)>
+     - `<hash> <message>`
+   - **Risks:** <list any concerns, or "None detected">
+   ---
+
+2. Below the summary, show the full diff of the changes (staged and unstaged) so the user can review exactly what will be pushed.
+
+3. After showing the summary and diff, ask:
    **"Do you want to proceed with the push? (yes / no)"**
    Wait for their answer before doing anything else.
 

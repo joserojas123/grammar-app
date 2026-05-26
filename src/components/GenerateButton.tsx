@@ -6,12 +6,8 @@ type Props = {
 
 export default function GenerateButton({ onClick }: Props) {
     return (
-        <button
-            onClick={() => {onClick()}}
-            className="px-8 py-3 text-lg font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-700 active:scale-95 transition shadow-md"
-        >
-            🎲 Generate
+        <button className="grammar-btn" onClick={onClick}>
+            <span className="grammar-btn-label">Generate</span>
         </button>
     );
 }
-
